@@ -1,0 +1,41 @@
+{
+  "name": "dsh-approval-enter",
+  "version": "1.0.0",
+  "description": "Focus the DeepSeek Harness approval panel automatically, so Enter approves and Esc rejects without reaching for the mouse.",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "approval",
+    "accessibility",
+    "keyboard"
+  ],
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  }
+}

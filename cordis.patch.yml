@@ -1,0 +1,11 @@
+# One loader row. The row exists so the client module scanner can see this
+# package: `dsh-client-modules` walks the host Loader's rows, reads each row's
+# package manifest, and ships the `exports["./client"]` bundle for every package
+# declaring `dsh.client.platform: "web"`. Without a row the browser half is
+# never discovered, however well the manifest is written.
+#
+# The host half of this package is intentionally empty — all of the behaviour
+# lives in the browser bundle.
+- insert:
+    - id: approval-enter
+      name: dsh-approval-enter
